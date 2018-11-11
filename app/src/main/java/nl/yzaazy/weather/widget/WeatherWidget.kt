@@ -20,7 +20,7 @@ class WeatherWidget : AppWidgetProvider() {
             val weatherPersistence = WeatherPersistence()
             weatherPersistence.getData(context, object: DataCallback {
                 override fun dataCallback(weatherData: WeatherData) {
-                    updateAppWidget(context, appWidgetManager, appWidgetId, weatherData.currently.summary)
+                    updateAppWidget(context, appWidgetManager, appWidgetId, weatherData)
                 }
             })
         }
@@ -38,10 +38,10 @@ class WeatherWidget : AppWidgetProvider() {
 
         internal fun updateAppWidget(
             context: Context, appWidgetManager: AppWidgetManager,
-            appWidgetId: Int, string: String
+            appWidgetId: Int, weatherData: WeatherData
         ) {
             val views = RemoteViews(context.packageName, R.layout.weather_widget)
-            views.setTextViewText(R.id.appwidget_text, string)
+            views.setTextViewText(R.id.weather_summery_text, weatherData.currently.summary)
             // Instruct the widget manager to update the widget
             appWidgetManager.updateAppWidget(appWidgetId, views)
         }

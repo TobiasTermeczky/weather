@@ -5,17 +5,26 @@
                 android:background="#09C">
 
     <TextView
-            android:id="@+id/appwidget_text"
+            android:id="@+id/weather_summery_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="@string/appwidget_text"
             android:textColor="#ffffff"
-            android:textSize="24sp"
-            android:textStyle="bold|italic"
-            android:layout_margin="8dp"
-            android:contentDescription="@string/appwidget_text"
-            android:background="#09C"/>
+            android:textSize="12sp"
+            android:contentDescription="@string/appwidget_text" android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp" android:layout_marginEnd="8dp" android:layout_marginBottom="8dp"/>
+    <TextView
+            android:id="@+id/weather_current_temp_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignEnd="@+id/weather_summery_text"
+            android:layout_marginEnd="5dp"
+            android:text="asdfasdf"
+
+
+    />
 
 </RelativeLayout>
